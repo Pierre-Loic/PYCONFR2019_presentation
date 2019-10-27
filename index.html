@@ -1,9 +1,311 @@
  
 <html>
   <header>
-    <title>PLB-Portfolio</title>
+    <title>PLB-Pyconfr2019-Conférence Chernobyl-NLP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </header>
   <body>
-    <p>Projects</p>
+
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+        class="fas fa-bars fa-1x"></i></span></button>
+
+  <!-- Collapsible content -->
+
+	  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	  	<h1 class="navbar-brand">La série Chernobyl et l'analyse du langage naturel</h1>
+	  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+	    <li class="nav-item"><a class="nav-link" href="#section1">Thème de la conférence</a></li>
+	    <li class="nav-item"><a class="nav-link" href="#section2">Structure du code</a></li>
+	    <li class="nav-item"><a class="nav-link" href="#section3">Analyse</a></li>
+	    <li class="nav-item"><a class="nav-link" href="#section4">Conclusion</a></li>
+	    <li class="nav-item"><a class="nav-link" href="#section5">Ressources</a></li>
+	    	</div>
+	  </ul>
+
+	</nav>
+
+
+
+
+	<div class="container" id="section1">
+		<hr>
+	  <h2>Le choix du thème de la conférence</h2>
+	  <p>
+	  	La série Chernobyl retrace l'accident qui a eu lieu sur le réacteur 4 de la centrale Lénine à une centaine de kilomètres 
+	  	de Kiev. Très bien documentée, cette série présente les points clès de l'accident aussi bien du point de vue technique que 
+	  	du point du fonctionnement de l'URSS. 
+	  </p>
+	  <p>
+	  	Ayant une formation d'ingénieur en génie nucléaire et ayant travaillé pendant 7 ans dans l'industrie électro-nucléaire, j'ai changé de 
+	  	secteur d'activité en 2017 pour travailler dans le développement en Python.
+	  </p>
+	  <p>
+	  	J'ai fait cette analyse de la série Chernobyl pour la PyconFr 2019 à Bordeaux. L'objectif de la conférence est de présenter les premières 
+	  	étapes d'une analyse de langage naturel en Python. Elle n'aborde donc pas les algorithmes les plus récents d'analyse du langage.
+	  </p>
+	  <p>
+	  	Les principales librairies Python utilisées pour l'analyse sont les suivantes :
+	  </p>
+
+	  <div class="container row">
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Pandas</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Manipulation de données</h6>
+		    <p class="card-text">Cette librairie est utilisée pour manipuler les données extraites des sous-titres sous forme de dataframes</p>
+		    <a href="https://pandas.pydata.org/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Scikit-learn</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Analyse du langage naturel</h6>
+		    <p class="card-text">Cette librairie est utilisée pour effectuer l'analyse du langage naturel</p>
+		    <a href="https://scikit-learn.org/stable/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">NLTK</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Analyse du langage naturel</h6>
+		    <p class="card-text">Cette librairie est utilisée pour effectuer la racinisation et la lemmatisation</p>
+		    <a href="https://www.nltk.org/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Wordcloud</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Création de nuages de mots</h6>
+		    <p class="card-text">Cette librairie est utlisée pour générer les nuages de mots</p>
+		    <a href="https://amueller.github.io/word_cloud/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Pillow</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Modification des nuages de mots</h6>
+		    <p class="card-text">Cette librairie est utlisée pour ajouter le temps sur les nuages de mots</p>
+		    <a href="https://pillow.readthedocs.io/en/stable/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+		<div class="card text-white bg-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">OpenCV</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Création de vidéos</h6>
+		    <p class="card-text">Cette librairie est utlisée pour générer vidéos de nuages de mots</p>
+		    <a href="https://opencv.org/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+
+	</div>
+
+	</div>
+	<div class="container" id="section2">
+		<hr>
+	  <h2>La structure du code</h2>
+	  <p>--------</p>
+	</div>
+	<div class="container" id="section3">
+		<hr>
+	  <h2>L'analyse</h2>
+	  <h3>Les nuages de mots</h3>
+	  <h3>Les nuages de mots avancés</h3>
+
+			<h4>Les images</h4>
+
+			<h4>La couleur</h4>
+
+		<h3>Les vidéos de nuages de mots</h3>
+
+		<p>
+			La première étape est de générer une vidéo à partir de nuages de mots créés au fil de la série. Cette première vidéo ne prend pas en compte l'étape de racinisation ou de lemmatisation. Voici le
+			rendu pour le premier épisode de la série :
+		</p>
+		<video width="500" height="281" controls>
+		    <source src="\\media\\project.mp4"
+		            type="video/mp4">
+
+		    <source src="\\media\\project.ogg"
+		            type="video/ogg">
+
+		    Votre navigateur ne supporte pas les vidéos.
+		</video>
+		<p>
+			La limites de cette visualisation est le manque de répère temporel pour se situer dans la série et la non utilisation
+			des couleurs pour de l'analyse.
+		</p>
+
+		<h3>Les vidéos de nuages de mots avancés</h3>
+
+			<h4>Les repères temporel</h4>
+
+			<h4>La couleur</h4>
+
+		<h3>L'analyse des personnages</h3>
+
+	  <div class="container row">
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Valeri Legassov</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Directeur adjoint de l'institut d'énergie atomique Kourtchatov</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Vassili Ignatenko</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Pompier appelé pour éteindre le feu à Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Boris Chtcherbina</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Vice-président du Conseil des ministres de l'URSS de 1984 à 1989 envoyé à Tchernobyl pour superviser la gestion de la catastrophe de Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Anatoli Diatlov</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Ingénieur en chef adjoint de la centrale nucléaire de Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Viktor Brioukhanov</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Directeur de la centrale nucléaire de Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Nikolaï Fomine</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Ingénieur en chef de la centrale de Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Leonid Toptounov</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Ingénieur en charge du contrôle du réacteur 4 de Tchernobyl</h6>
+		  </div>
+		</div>
+
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		<img class="card-img-top" src="\\media\\0.png" alt="Card image cap">
+		  <div class="card-body">
+		    <h5 class="card-title">Mikhaïl Gorbatchev</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Secrétaire général du Comité central du Parti communiste de l'Union soviétique</h6>
+		  </div>
+		</div>
+
+	</div>
+	<div class="container" id="section4">
+		<hr>
+	<h2>Conclusion et ouverture</h2>
+		<p>
+			Il s'agit d'une analyse très simple de la série Chernobyl grâce à de l'analyse du langage naturel. Les premières étapes d'une 
+			analyse du langage naturel ont été vues : tokenisation, lemmatisation, racinisation, sac de mots. Les algorithmes de machine 
+			learning ont été très peu utilisés (uniquement le LDA pour détecter les thèmes principaux de la série mais les résultats ne sont pas
+			 très pertinents). Il s'agit donc d'une des principales pistes d'amélioration.
+		</p>
+		<h3>Autres algorithmes</h3>
+		<p>
+			Un travail sur les hyperparamètres du modèle LDA doit permettre d'obtenir de meilleurs résultats. D'autres algorithmes peuvent permettre de 
+			pousser plus loin l'analyse :
+		</p>
+
+	  <div class="container row">
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Word2vec</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Plongement lexical</h6>
+		    <p class="card-text">Cette librairie peut être utilisée pour analyser plus finement la série</p>
+		    <a href="#" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
+		</div>
+		</div>
+
+
+		<h3>Autres utilisations</h3>
+		<P>
+			Cette analyse peut facilement s'adapter à d'autres types d'oeuvres que les séries. En modifiant le module de collecte de données (sbttimport.py), 
+			il semble assez simple de pouvoir analyser une oeuvre littéraire par exemple.
+		</P>
+	</div>
+	
+	
+	<div class="container" id="section5">
+		<hr>
+	<h2>Ressources</h2>
+		<div class="container row">
+			
+				<div class="card border-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="max-width: 18rem;">
+				<a href="#">
+				  <div class="card-header">Documents de la conférence</div>
+				</a>
+				  <div class="card-body text-dark">
+				    <h5 class="card-title">Document de présentation</h5>
+				    <p class="card-text">Support de présentation de la conférence PyconFR 2019</p>
+				  </div>
+				</div>
+			
+				<div class="card border-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="max-width: 18rem;">
+					<a href="http://www.irma-grenoble.com/05documentation/00bibliotheque_note_lecture_afficher.php?idNote=6" target="_blank">
+				  		<div class="card-header">Livres</div>
+				  	</a>
+				  <div class="card-body text-dark">
+				    <h5 class="card-title">Livre technique sur l'accident</h5>
+				    <p class="card-text">Tchernobyl, 25 ans après... Fukushima. Quel avenir pour le nucléaire ?</p>
+				  </div>
+				</div>
+
+				<div class="card border-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="max-width: 18rem;">
+				  	<div class="card-header">Crédits</div>
+				  <div class="card-body text-dark">
+				    <h5 class="card-title">Sources utilisées pour les sous-titres</h5>
+				    <a href="http://www.MY-SUBS.com" target="_blank">
+				    	<p class="card-text">www.MY-SUBS.com</p>
+				    </a>
+				    <a href="#" target="_blank">
+				    	<p class="card-text">www.sous-titres.eu</p>
+				    </a>
+				  </div>
+				</div>
+
+		</div>
+
+	</div>
+	<hr>
+
+	<footer class="page-footer font-small bg-dark fixed-bottom">
+	  <div class="footer-copyright text-center py-3">Pierre-Loic Bayart -
+	    <a href="https://github.com/Pierre-Loic/Chernobyl_analysis"> GitHub -</a>
+	    <a href="https://www.linkedin.com/in/pierreloicbayart/"> Linkedin</a>
+	  </div>
+	</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
