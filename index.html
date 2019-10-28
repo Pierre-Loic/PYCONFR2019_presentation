@@ -17,7 +17,7 @@
   <!-- Collapsible content -->
 
 	  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	  	<h1 class="navbar-brand">La série Chernobyl et l'analyse du langage naturel</h1>
+	  	<h1 class="navbar-brand mt-lg-0">La série Chernobyl et l'analyse du langage naturel</h1>
 	  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
 	    <li class="nav-item"><a class="nav-link" href="#section1">Thème de la conférence</a></li>
 	    <li class="nav-item"><a class="nav-link" href="#section2">Structure du code</a></li>
@@ -35,18 +35,18 @@
 	<div class="container" id="section1">
 		<hr>
 	  <h2>Le choix du thème de la conférence</h2>
-	  <p>
+	  <p class="text-left">
 	  	La série Chernobyl retrace l'accident qui a eu lieu sur le réacteur 4 de la centrale Lénine à une centaine de kilomètres 
 	  	de Kiev. Très bien documentée, cette série présente les points clès de l'accident aussi bien du point de vue technique que 
 	  	du point du fonctionnement de l'URSS. 
 	  </p>
-	  <p>
+	  <p class="text-center">
 	  	Ayant une formation d'ingénieur en génie nucléaire et ayant travaillé pendant 7 ans dans l'industrie électro-nucléaire, j'ai changé de 
 	  	secteur d'activité en 2017 pour travailler dans le développement en Python.
 	  </p>
-	  <p>
+	  <p class="text-right">
 	  	J'ai fait cette analyse de la série Chernobyl pour la PyconFr 2019 à Bordeaux. L'objectif de la conférence est de présenter les premières 
-	  	étapes d'une analyse de langage naturel en Python. Elle n'aborde donc pas les algorithmes les plus récents d'analyse du langage.
+	  	étapes d'une analyse de langage naturel en Python. Elle n'a pas pour but une étude poussée des algorithmes d'analyse du langage naturel.
 	  </p>
 	  <p>
 	  	Les principales librairies Python utilisées pour l'analyse sont les suivantes :
@@ -122,17 +122,106 @@
 	<div class="container" id="section2">
 		<hr>
 	  <h2>La structure du code</h2>
-	  <p>--------</p>
+	  <p>L'architecture du code s'appuie sur quatre modules et un notebook Jupyter. Les différents mdoules sont :</p>
+	  <ul>
+	  	<li>sbttimport</li>
+	  	<li>dataprocess</li>
+	  	<li>insightviz</li>
+	  	<li>main</li>
+	  	<li>manager.ipynb</li>
+	  </ul>
 	</div>
 	<div class="container" id="section3">
 		<hr>
 	  <h2>L'analyse</h2>
 	  <h3>Les nuages de mots</h3>
-	  <h3>Les nuages de mots avancés</h3>
 
-			<h4>Les images</h4>
+	  		<h4>Les images</h4>
+	  		<p>
+	  			La librairie Wordcloud permet de générer des nuages de mots à partir d'images. Les nuages de mots suivants ont été générés à partir d'une image du réacteur de Tchernobyl :
+	  		</p>
+			<img src="/media/Wcfr.png" class="img-fluid" alt="Chernobyl wordcloud image French">
+			
+			<img src="/media/Wceng.png" class="img-fluid" alt="Chernobyl wordcloud image English">
 
 			<h4>La couleur</h4>
+
+			<p>
+				La couleur des mots générée par la librairie Wordcloud n'est pas utilisée pour ajouter du sens au nuage de mots. Une utilisation possible de la couleur des mots est d'afficher des champs lexicaux. On peut générer des champs lexicaux grâce au l'algorithme Latent Dirichlet Allocation (LDA). Les résultats obtenus sont présentés dans le tableau suivant : 
+			</p>
+			<table class="table table-dark">
+			  <thead>
+			    <tr>
+			      <th scope="col"></th>
+			      <th scope="col">Word 0</th>
+			      <th scope="col">Word 1</th>
+			      <th scope="col">Word 2</th>
+			      <th scope="col">Word 3</th>
+			      <th scope="col">Word 4</th>
+			      <th scope="col">Word 5</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">Topic 0</th>
+			      <td>minute</td>
+			      <td>much</td>
+			      <td>fuck</td>
+			      <td>moment</td>
+			      <td>dangerous</td>
+			      <td>number</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Topic 1</th>
+			      <td>reactivity</td>
+			      <td>said</td>
+			      <td>turn</td>
+			      <td>many</td>
+			      <td>won</td>
+			      <td>maybe</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Topic 2</th>
+			      <td>happen</td>
+			      <td>last</td>
+			      <td>bullet</td>
+			      <td>long</td>
+			      <td>dead</td>
+			      <td>life</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Topic 3</th>
+			      <td>world</td>
+			      <td>gonna</td>
+			      <td>already</td>
+			      <td>wait</td>
+			      <td>explosion</td>
+			      <td>institute</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Topic 4</th>
+			      <td>sorry</td>
+			      <td>give</td>
+			      <td>working</td>
+			      <td>matter</td>
+			      <td>safety</td>
+			      <td>year</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">Topic 5</th>
+			      <td>ever</td>
+			      <td>everyone</td>
+			      <td>night</td>
+			      <td>ground</td>
+			      <td>scientist</td>
+			      <td>care</td>
+			    </tr>
+			  </tbody>
+			</table>
+
+			<p>
+				Le tableau a été généré à partir de la méthode show_topics de la classe Orchestrator du module main. Les champs lexicaux ne sont pas clairement définis. L'implémentation dans la couleur des mots des nuages de mots ne semble pas très intéressante en l'état.
+			</p>
 
 		<h3>Les vidéos de nuages de mots</h3>
 
@@ -140,7 +229,7 @@
 			La première étape est de générer une vidéo à partir de nuages de mots créés au fil de la série. Cette première vidéo ne prend pas en compte l'étape de racinisation ou de lemmatisation. Voici le
 			rendu pour le premier épisode de la série :
 		</p>
-		<video width="500" height="281" controls>
+		<video class="center-block" width="500" height="281" controls>
 		    <source src="/media/project.mp4"
 		            type="video/mp4">
 
@@ -150,15 +239,8 @@
 		    Votre navigateur ne supporte pas les vidéos.
 		</video>
 		<p>
-			La limites de cette visualisation est le manque de répère temporel pour se situer dans la série et la non utilisation
-			des couleurs pour de l'analyse.
+			La limites de cette visualisation est le manque de répère temporel pour se situer dans la série.
 		</p>
-
-		<h3>Les vidéos de nuages de mots avancés</h3>
-
-			<h4>Les repères temporel</h4>
-
-			<h4>La couleur</h4>
 
 		<h3>L'analyse des personnages</h3>
 
@@ -233,36 +315,48 @@
 		  </div>
 		</div>
 
+
+
 	</div>
 	<div class="container" id="section4">
 		<hr>
 	<h2>Conclusion et ouverture</h2>
-		<p>
+		<p class="text-center">
 			Il s'agit d'une analyse très simple de la série Chernobyl grâce à de l'analyse du langage naturel. Les premières étapes d'une 
 			analyse du langage naturel ont été vues : tokenisation, lemmatisation, racinisation, sac de mots. Les algorithmes de machine 
 			learning ont été très peu utilisés (uniquement le LDA pour détecter les thèmes principaux de la série mais les résultats ne sont pas
-			 très pertinents). Il s'agit donc d'une des principales pistes d'amélioration.
+			 très pertinents) et pas assez optimisé (affinage des hyperparamètres). Il s'agit donc d'une des principales pistes d'amélioration.
+		</p>
+		<p class="text-center">
+			Un autre point important apparaît suite à cette analyse : le volume des données joue un grand rôle dans la qualité des résultats. Les cinq épisodes de la série contiennent quelques milliers de phrases : cela est assez faible pour les algorithmes de machine learning utilisés.
 		</p>
 		<h3>Autres algorithmes</h3>
-		<p>
-			Un travail sur les hyperparamètres du modèle LDA doit permettre d'obtenir de meilleurs résultats. D'autres algorithmes peuvent permettre de 
-			pousser plus loin l'analyse :
+		<p class="text-center">
+			Un travail sur les hyperparamètres des modèles de machine learning utilisés doit permettre d'obtenir de meilleurs résultats. D'autres algorithmes et librairies peuvent permettre de pousser plus loin l'analyse :
 		</p>
 
 	  <div class="container row">
 		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
 		  <div class="card-body">
-		    <h5 class="card-title">Word2vec</h5>
-		    <h6 class="card-subtitle mb-2 text-muted">Plongement lexical</h6>
+		    <h5 class="card-title">Spacy</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Librairie NLP</h6>
 		    <p class="card-text">Cette librairie peut être utilisée pour analyser plus finement la série</p>
-		    <a href="#" target="_blank" class="card-link">Plus d'informations</a>
+		    <a href="https://spacy.io/" target="_blank" class="card-link">Plus d'informations</a>
 		  </div>
 		</div>
+		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
+		  <div class="card-body">
+		    <h5 class="card-title">Scikit learn</h5>
+		    <h6 class="card-subtitle mb-2 text-muted">Clusterisation</h6>
+		    <p class="card-text">Cette librairie peut être utilisée pour effectuer une clusterisation sur du texte</p>
+		    <a href="https://scikit-learn.org/stable/" target="_blank" class="card-link">Plus d'informations</a>
+		  </div>
 		</div>
+	</div>
 
 
 		<h3>Autres utilisations</h3>
-		<P>
+		<P class="text-center">
 			Cette analyse peut facilement s'adapter à d'autres types d'oeuvres que les séries. En modifiant le module de collecte de données (sbttimport.py), 
 			il semble assez simple de pouvoir analyser une oeuvre littéraire par exemple.
 		</P>
@@ -275,7 +369,7 @@
 		<div class="container row">
 			
 				<div class="card border-dark m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="max-width: 18rem;">
-				<a href="#">
+				<a href="/media/presentation.pdf" target="_blank">
 				  <div class="card-header">Documents de la conférence</div>
 				</a>
 				  <div class="card-body text-dark">
@@ -313,9 +407,10 @@
 	<hr>
 
 	<footer class="page-footer font-small bg-dark fixed-bottom">
-	  <div class="footer-copyright text-center py-3">Pierre-Loic Bayart -
-	    <a href="https://github.com/Pierre-Loic/Chernobyl_analysis"> GitHub -</a>
-	    <a href="https://www.linkedin.com/in/pierreloicbayart/"> Linkedin</a>
+	  <div class="footer-copyright text-white text-center py-3">Pierre-Loic Bayart - 
+	    <a href="https://github.com/Pierre-Loic/Chernobyl_analysis">GitHub</a>
+	     - 
+	    <a href="https://www.linkedin.com/in/pierreloicbayart/">Linkedin</a>
 	  </div>
 	</footer>
 
