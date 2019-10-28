@@ -21,6 +21,10 @@ color: #ff6f00;
 color: #004d40;
 }
 
+#maintitle {
+	margin: 1em;
+}
+
 h2 {
 	margin: 1em 0 0.5em 0;
 	color: #343434;

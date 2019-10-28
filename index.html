@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <title>PLB-Pyconfr2019-Conférence Chernobyl-NLP</title>
@@ -10,28 +10,28 @@
   <body>
 
 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
-        class="fas fa-bars fa-1x"></i></span></button>
-
-  <!-- Collapsible content -->
-
+		<button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    						aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+		</button>
+		<span class="text-white" id="maintitle">PLB - PyConFr2019</span>
 	  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	  	<h1 class="navbar-brand mt-lg-0">La série Chernobyl et l'analyse du langage naturel</h1>
 	  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-	    <li class="nav-item"><a class="nav-link" href="#section1">Thème de la conférence</a></li>
-	    <li class="nav-item"><a class="nav-link" href="#section2">Structure du code</a></li>
-	    <li class="nav-item"><a class="nav-link" href="#section3">Analyse</a></li>
-	    <li class="nav-item"><a class="nav-link" href="#section4">Conclusion</a></li>
-	    <li class="nav-item"><a class="nav-link" href="#section5">Ressources</a></li>
+	  	  	
+			    <li class="nav-item"><a class="nav-link" href="#section1">Thème de la conférence</a></li>
+			    <li class="nav-item"><a class="nav-link" href="#section2">Structure du code</a></li>
+			    <li class="nav-item"><a class="nav-link" href="#section3">Analyse</a></li>
+			    <li class="nav-item"><a class="nav-link" href="#section4">Conclusion</a></li>
+			    <li class="nav-item"><a class="nav-link" href="#section5">Ressources</a></li>
 	    	</div>
 	  </ul>
-
 	</nav>
 
-
-
-
+	<div class="container">
+		<p class="text-center">
+			<h1>La série Chernobyl et l'analyse du langage naturel</h1>
+		</p>
+	</div>
 	<div class="container" id="section1">
 		<hr>
 	  <h2>Le choix du thème de la conférence</h2>
@@ -122,15 +122,15 @@
 	<div class="container" id="section2">
 		<hr>
 	  <h2>La structure du code</h2>
-	  <p>L'architecture du code s'appuie sur quatre modules et un notebook Jupyter. Les différents mdoules sont :</p>
-	  <ul>
-	  	<li>sbttimport</li>
-	  	<li>dataprocess</li>
-	  	<li>insightviz</li>
-	  	<li>main</li>
-	  	<li>manager.ipynb</li>
-	  </ul>
+	  <p>L'architecture du code s'appuie sur quatre modules et un notebook Jupyter. Les différents modules sont :</p>
+		  <a href="https://github.com/Pierre-Loic/Chernobyl_analysis/blob/master/chernobylapp/sbttimport.py" target="_blank"><span class="badge badge-pill badge-dark">Sbttimport</span></a>
+		  <a href="https://github.com/Pierre-Loic/Chernobyl_analysis/blob/master/chernobylapp/dataprocess.py" target="_blank"><span class="badge badge-pill badge-dark">Dataprocess</span></a>
+		  <a href="https://github.com/Pierre-Loic/Chernobyl_analysis/blob/master/chernobylapp/insightviz.py" target="_blank"><span class="badge badge-pill badge-dark">Insightviz</span></a>
+		  <a href="https://github.com/Pierre-Loic/Chernobyl_analysis/blob/master/chernobylapp/main.py" target="_blank"><span class="badge badge-pill badge-primary">Main</span></a>
+		  <a href="https://github.com/Pierre-Loic/Chernobyl_analysis/blob/master/chernobylapp/manager.ipynb" target="_blank"><span class="badge badge-pill badge-success">manager.ipynb</span></a>
+		  <img src="/media/structure.png" class="img-fluid" alt="Architecture du code">
 	</div>
+
 	<div class="container" id="section3">
 		<hr>
 	  <h2>L'analyse</h2>
@@ -149,75 +149,77 @@
 			<p>
 				La couleur des mots générée par la librairie Wordcloud n'est pas utilisée pour ajouter du sens au nuage de mots. Une utilisation possible de la couleur des mots est d'afficher des champs lexicaux. On peut générer des champs lexicaux grâce au l'algorithme Latent Dirichlet Allocation (LDA). Les résultats obtenus sont présentés dans le tableau suivant : 
 			</p>
-			<table class="table table-dark">
-			  <thead>
-			    <tr>
-			      <th scope="col"></th>
-			      <th scope="col">Word 0</th>
-			      <th scope="col">Word 1</th>
-			      <th scope="col">Word 2</th>
-			      <th scope="col">Word 3</th>
-			      <th scope="col">Word 4</th>
-			      <th scope="col">Word 5</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">Topic 0</th>
-			      <td>minute</td>
-			      <td>much</td>
-			      <td>fuck</td>
-			      <td>moment</td>
-			      <td>dangerous</td>
-			      <td>number</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Topic 1</th>
-			      <td>reactivity</td>
-			      <td>said</td>
-			      <td>turn</td>
-			      <td>many</td>
-			      <td>won</td>
-			      <td>maybe</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Topic 2</th>
-			      <td>happen</td>
-			      <td>last</td>
-			      <td>bullet</td>
-			      <td>long</td>
-			      <td>dead</td>
-			      <td>life</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Topic 3</th>
-			      <td>world</td>
-			      <td>gonna</td>
-			      <td>already</td>
-			      <td>wait</td>
-			      <td>explosion</td>
-			      <td>institute</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Topic 4</th>
-			      <td>sorry</td>
-			      <td>give</td>
-			      <td>working</td>
-			      <td>matter</td>
-			      <td>safety</td>
-			      <td>year</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">Topic 5</th>
-			      <td>ever</td>
-			      <td>everyone</td>
-			      <td>night</td>
-			      <td>ground</td>
-			      <td>scientist</td>
-			      <td>care</td>
-			    </tr>
-			  </tbody>
-			</table>
+			<div class="table-responsive">
+				<table class="table table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col"></th>
+				      <th scope="col">Word 0</th>
+				      <th scope="col">Word 1</th>
+				      <th scope="col">Word 2</th>
+				      <th scope="col">Word 3</th>
+				      <th scope="col">Word 4</th>
+				      <th scope="col">Word 5</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">Topic 0</th>
+				      <td>minute</td>
+				      <td>much</td>
+				      <td>fuck</td>
+				      <td>moment</td>
+				      <td>dangerous</td>
+				      <td>number</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Topic 1</th>
+				      <td>reactivity</td>
+				      <td>said</td>
+				      <td>turn</td>
+				      <td>many</td>
+				      <td>won</td>
+				      <td>maybe</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Topic 2</th>
+				      <td>happen</td>
+				      <td>last</td>
+				      <td>bullet</td>
+				      <td>long</td>
+				      <td>dead</td>
+				      <td>life</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Topic 3</th>
+				      <td>world</td>
+				      <td>gonna</td>
+				      <td>already</td>
+				      <td>wait</td>
+				      <td>explosion</td>
+				      <td>institute</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Topic 4</th>
+				      <td>sorry</td>
+				      <td>give</td>
+				      <td>working</td>
+				      <td>matter</td>
+				      <td>safety</td>
+				      <td>year</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Topic 5</th>
+				      <td>ever</td>
+				      <td>everyone</td>
+				      <td>night</td>
+				      <td>ground</td>
+				      <td>scientist</td>
+				      <td>care</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
 
 			<p>
 				Le tableau a été généré à partir de la méthode show_topics de la classe Orchestrator du module main. Les champs lexicaux ne sont pas clairement définis. L'implémentation dans la couleur des mots des nuages de mots ne semble pas très intéressante en l'état.
@@ -314,8 +316,7 @@
 		    <h6 class="card-subtitle mb-2 text-muted">Ingénieur en charge du contrôle du réacteur 4 de Tchernobyl</h6>
 		  </div>
 		</div>
-
-
+	</div>
 
 	</div>
 	<div class="container" id="section4">
