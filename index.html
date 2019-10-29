@@ -17,7 +17,6 @@
 		<span class="text-white" id="maintitle">PLB - PyConFr2019</span>
 	  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 	  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-	  	  	
 			    <li class="nav-item"><a class="nav-link" href="#section1">Thème de la conférence</a></li>
 			    <li class="nav-item"><a class="nav-link" href="#section2">Structure du code</a></li>
 			    <li class="nav-item"><a class="nav-link" href="#section3">Analyse</a></li>
@@ -46,7 +45,7 @@
 	  </p>
 	  <p class="text-right">
 	  	J'ai fait cette analyse de la série Chernobyl pour la PyconFr 2019 à Bordeaux. L'objectif de la conférence est de présenter les premières 
-	  	étapes d'une analyse de langage naturel en Python. Elle n'a pas pour but une étude poussée des algorithmes d'analyse du langage naturel.
+	  	étapes d'une analyse de langage naturel en Python. Elle n'a pas pour but une étude poussée des algorithmes d'analyse du langage naturel mais plutôt d'étudier les possibilités de visualisation de la donnée.
 	  </p>
 	  <p>
 	  	Les principales librairies Python utilisées pour l'analyse sont les suivantes :
@@ -84,7 +83,7 @@
 		  <div class="card-body">
 		    <h5 class="card-title">Gensim</h5>
 		    <h6 class="card-subtitle mb-2 text-muted">Création de modèles thématiques (topic modelling)</h6>
-		    <p class="card-text">Cette librairie est utlisée pour trouver les caractéristiques des personnages de la série</p>
+		    <p class="card-text">Cette librairie est utilisée pour trouver les caractéristiques des personnages de la série</p>
 		    <a href="https://radimrehurek.com/gensim/" target="_blank" class="card-link">Plus d'informations</a>
 		  </div>
 		</div>
@@ -138,7 +137,7 @@
 
 	  		<h4>Les images</h4>
 	  		<p>
-	  			La librairie Wordcloud permet de générer des nuages de mots à partir d'images. Les nuages de mots suivants ont été générés à partir d'une image du réacteur de Tchernobyl :
+	  			La librairie Wordcloud permet de générer des nuages de mots à partir d'images. Les nuages de mots suivants ont été générés à partir d'une image du réacteur de Tchernobyl et ils présentent les mots les plus présents dans les sous-titres de la série en français et en anglais :
 	  		</p>
 			<img src="/media/Wcfr.png" class="img-fluid" alt="Chernobyl wordcloud image French">
 			
@@ -147,7 +146,7 @@
 			<h4>La couleur</h4>
 
 			<p>
-				La couleur des mots générée par la librairie Wordcloud n'est pas utilisée pour ajouter du sens au nuage de mots. Une utilisation possible de la couleur des mots est d'afficher des champs lexicaux. On peut générer des champs lexicaux grâce au l'algorithme Latent Dirichlet Allocation (LDA). Les résultats obtenus sont présentés dans le tableau suivant : 
+				La couleur des mots générée par la librairie Wordcloud n'est pas utilisée à cette étape pour ajouter du sens aux nuages de mots. Une utilisation possible de la couleur des mots est d'afficher des champs lexicaux. On peut générer des champs lexicaux grâce au l'algorithme Latent Dirichlet Allocation (LDA). Les résultats obtenus sont présentés dans le tableau suivant : 
 			</p>
 			<div class="table-responsive">
 				<table class="table table-dark">
@@ -228,21 +227,76 @@
 		<h3>Les vidéos de nuages de mots</h3>
 
 		<p>
-			La première étape est de générer une vidéo à partir de nuages de mots créés au fil de la série. Cette première vidéo ne prend pas en compte l'étape de racinisation ou de lemmatisation. Voici le
-			rendu pour le premier épisode de la série :
+			La première étape est de générer une vidéo à partir de nuages de mots créés au fil de la série. Cette première vidéo ne prend pas en compte l'étape de racinisation ou de lemmatisation. Voici le rendu pour le premier épisode de la série :
 		</p>
-		<video class="center-block" width="500" height="281" controls>
-		    <source src="/media/project.mp4"
-		            type="video/mp4">
 
-		    <source src="/media/project.ogg"
-		            type="video/ogg">
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item" controls>
+			    <source src="/media/project.mp4"
+			            type="video/mp4">
 
-		    Votre navigateur ne supporte pas les vidéos.
-		</video>
+			    <source src="/media/project.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
 		<p>
-			La limites de cette visualisation est le manque de répère temporel pour se situer dans la série.
+			La limites de cette visualisation est le manque de répères temporels pour se situer dans la série et l'utilisation d'un nombre de sous-titres uniformes pour générer les nuages de mots. Ce dernier point ne permet pas de se rendre compte de la quantité de dialogues sur une plage de temps définie.
 		</p>
+		<p>
+			Voici l'analyse réalisée sur des plages de temps fixes (10 minutes), pour les cinq épisodes de la série :
+		</p>
+
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item" controls>
+			    <source src="/media/project1.mp4"
+			            type="video/mp4">
+			    <source src="/media/project1.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
+		<p class="text-center">Vidéo de nuages de mots de l'épisode 1 de la série</p>
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item" controls>
+			    <source src="/media/project2.mp4"
+			            type="video/mp4">
+			    <source src="/media/project2.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
+		<p class="text-center">Vidéo de nuages de mots de l'épisode 2 de la série</p>
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item" controls>
+			    <source src="/media/project3.mp4"
+			            type="video/mp4">
+			    <source src="/media/project3.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
+		<p class="text-center">Vidéo de nuages de mots de l'épisode 3 de la série</p>
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="embed-responsive-item" controls>
+			    <source src="/media/project4.mp4"
+			            type="video/mp4">
+			    <source src="/media/project4.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
+		<p class="text-center">Vidéo de nuages de mots de l'épisode 4 de la série</p>
+		<div align="center" class="embed-responsive embed-responsive-16by9">
+			<video class="center-block" width="500" height="281" controls>
+			    <source src="/media/project5.mp4"
+			            type="video/mp4">
+			    <source src="/media/project5.ogg"
+			            type="video/ogg">
+			    Votre navigateur ne supporte pas les vidéos.
+			</video>
+		</div>
+		<p class="text-center">Vidéo de nuages de mots de l'épisode 5 de la série</p>
 
 		<h3>L'analyse des personnages</h3>
 
