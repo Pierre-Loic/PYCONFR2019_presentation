@@ -151,11 +151,16 @@
 					<img src="/media/Wcfr.png" class="img-fluid rounded" alt="Chernobyl wordcloud image French">
 				</a>
 			</div>
+			<p class="text-center">Nuage de mots créé en utilisant de la racinisation des sous-titres français</p>
 			<div class="text-center">
 				<a href="/media/Wceng.png" target="_blank">
 					<img src="/media/Wceng.png" class="img-fluid rounded" alt="Chernobyl wordcloud image English">
 				</a>
 			</div>
+			<p class="text-center">Nuage de mots créé en utilisant de la lemmatisation des sous-titres anglais</p>
+			<p>
+				Les nuages de mots de l'ensemble de la série permettent de se rendre que l'accent n'a pas été mis sur l'aspect technique de l'accident (même si l'épisode 5 présente très bien le déroulé technique de l'accident) mais plutôt sur comment la crise a été gérée ainsi que les conséquences.
+			</p>
 			<h4>La couleur</h4>
 
 			<p>
@@ -323,7 +328,9 @@
 		<p class="text-center">Vidéo de nuages de mots de l'épisode 5 de la série</p>
 
 		<h3>L'analyse des personnages</h3>
-
+		<p>
+			Pour essayer de mieux se rendre compte de comment sont présentés les personnages de la série, on utilise l'algorithme Word2Vec de la librairie Gensim pour trouver les mots qui sont proches des noms des personnages.
+		</p>
 	  <div class="container row">
 		<div class="card bg-light m-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="width: 18rem;">
 		<a href="/media/legasov.png" target="_blank">
@@ -403,8 +410,7 @@
 		<p class="text-center">
 			Il s'agit d'une analyse très simple de la série Chernobyl grâce à de l'analyse du langage naturel. Les premières étapes d'une 
 			analyse du langage naturel ont été vues : tokenisation, lemmatisation, racinisation, sac de mots. Les algorithmes de machine 
-			learning ont été très peu utilisés (uniquement le LDA pour détecter les thèmes principaux de la série mais les résultats ne sont pas
-			 très pertinents) et pas assez optimisé (affinage des hyperparamètres). Il s'agit donc d'une des principales pistes d'amélioration.
+			learning ont été peu utilisés (uniquement le LDA pour détecter les thèmes principaux de la série et Word2Vec pour la description des personnages) et pas assez optimisé (affinage des hyperparamètres). Il s'agit donc d'une des principales pistes d'amélioration.
 		</p>
 		<p class="text-center">
 			Un autre point important apparaît suite à cette analyse : le volume des données joue un grand rôle dans la qualité des résultats. Les cinq épisodes de la série contiennent quelques milliers de phrases : cela est assez faible pour les algorithmes de machine learning utilisés.
